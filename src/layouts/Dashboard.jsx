@@ -14,7 +14,7 @@ const DashboardComponent = styled.div`
   background: #fff;
   margin: auto;
   min-height: 600px;
-  border-radius: 5%;
+  border-radius: 10px;
 `;
 
 const StyledTitle = styled.h1`
