@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-const PageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin: calc((100vh - 600px) / 2) auto;
-`;
-
 const Container = styled.div`
     width: 70%;
     height: 600px;
@@ -62,15 +54,6 @@ const Description = styled.p`
 `;
 
 const Modalities = styled.div`
-    span{
-        color: white;
-
-        font-weight: 300;
-        font-size: 18px;
-        letter-spacing: 2px;
-        text-align: center;
-    }
-
     @media (max-width: 840px) {
         display: flex;
         flex-direction: column;
@@ -122,7 +105,6 @@ const Option = styled.button`
 `;
 
 export {
-    PageContainer,
     Container,
     ContainerAbout,
     Salutation,
