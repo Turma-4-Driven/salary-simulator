@@ -49,11 +49,11 @@ const cltInssTaxes = [
  * @param {number} value Valor a ser calculado o desconto
  * @param {array} taxList Lista com as faixas de desconto, será algo da forma:
  * [
- * 	{
- * 		startRangeValue: 3641.04,
-			endRangeValue?: 7087.22,
-			tax: 14.0,
- * 	}
+ *   {
+ *     startRangeValue: 3641.04,
+ *      endRangeValue?: 7087.22,
+ *      tax: 14.0,
+ *   }
  * ]
  * @returns valor do desconto a partir das faixas
  */
@@ -98,7 +98,7 @@ const value = 5000;
 const discountInss = calcRangeTableDiscount(value, cltInssTaxes);
 const discountIr = calcRangeTableDiscount(value - discountInss, cltIrTaxes);
 console.log({ 
-	discountInss,
-	discountIr,
+  discountInss,
+  discountIr,
 });
 */
