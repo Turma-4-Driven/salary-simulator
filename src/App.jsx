@@ -1,17 +1,24 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashboard from './layouts/Dashboard';
-import Calculator from './pages';
 
-function App() {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Dashboard />}>
-					<Route path="/home" element={<Calculator />} />
-				</Route>
-			</Routes>
-		</BrowserRouter>
-	);
-}
+import ResetStyleCSS from './styles/ResetStyleCSS';
+import GlobalStyle from './styles/GlobalStyle';
+
+import Home from './pages/home/Home';
+
+const App = () => {
+  return (
+    <>
+      <ResetStyleCSS />
+      <GlobalStyle />
+      
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}>
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </>
+  );
+};
 
 export default App;
