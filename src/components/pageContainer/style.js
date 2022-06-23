@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const PageContainer = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,4 +8,6 @@ const PageContainer = styled.div`
   margin: calc((100vh - 600px) / 2) auto;
 `;
 
-export default PageContainer;
+export {
+  Container
+};

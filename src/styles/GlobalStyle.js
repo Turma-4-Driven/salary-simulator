@@ -1,22 +1,22 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-* {
+  * {
     box-sizing: border-box;
 
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-}
+  }
 
-body {
+  body {
     background-color: black;
-}
+  }
 
-html {
+  html {
     font-family: 'Roboto', sans-serif;
-}
+  }
 
-button {
+  button {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
 
@@ -26,11 +26,11 @@ button {
     //opacity: ${p => p.isDisable ? 0.7 : 1};
     //cursor: ${p => p.isDisable ? 'wait' : 'pointer'};
     :hover {
-        filter: brightness(90%);
+      filter: brightness(90%);
     }
-}
+  }
 
-input {   
+  input {   
     font-family: 'Roboto', sans-serif;
     font-style: normal;
 
@@ -38,22 +38,22 @@ input {
     //pointer-events: ${p => p.isDisable ? 'wait' : 'all'};
 
     ::placeholder {
-        color: #575757;
+      color: #575757;
     }
     :focus {
-        color: #1976D2;
-        outline: none;
+      color: #1976D2;
+      outline: none;
     }
-}
+  }
 
-a {
+  a {
     text-decoration: none;
     * {
-        :hover {
-            color: #1877F2;
-        }
+      :hover {
+        color: #1877F2;
+      }
     }
-}
-`
+  }
+`;
 
 export default GlobalStyle;
