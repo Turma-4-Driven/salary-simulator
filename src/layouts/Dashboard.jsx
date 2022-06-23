@@ -2,12 +2,12 @@ import Container from '../components/Page';
 import styled from 'styled-components';
 
 export default function Dashboard({ children }) {
-  return (
-    <Container>
-      <StyledTitle>Salary Calculator</StyledTitle>
-      <DashboardComponent>{children}</DashboardComponent>
-    </Container>
-  );
+	return (
+		<Container>
+			<StyledTitle>Salary Calculator</StyledTitle>
+			<DashboardComponent>{children}</DashboardComponent>
+		</Container>
+	);
 }
 
 const DashboardComponent = styled.div`
