@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: black;
+    background-color: #121212;
 }
 
 html {
@@ -38,10 +38,10 @@ input {
     //pointer-events: ${p => p.isDisable ? 'wait' : 'all'};
 
     ::placeholder {
-        color: #575757;
+        color: white;
     }
     :focus {
-        color: #1976D2;
+        color: white;
         outline: none;
     }
 }

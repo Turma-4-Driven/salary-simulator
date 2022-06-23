@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
+import PageContainer from '../../components/pageContainer/pageContainer';
+
 import { 
-  PageContainer,
   Container, 
   ContainerAbout, 
   Salutation, 
