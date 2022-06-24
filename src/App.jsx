@@ -5,6 +5,7 @@ import GlobalStyle from './styles/GlobalStyle';
 
 import Home from './pages/home';
 import CalculatorPage from './pages/CalculatorPage';
+import SummaryPage from './pages/summaryPage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/calculator-page' element={<CalculatorPage />} />
+          <Route path='/summary-page' element={<SummaryPage />} />
         </Routes>
       </BrowserRouter>
     </>
