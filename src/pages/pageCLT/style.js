@@ -15,15 +15,49 @@ const Container = styled.div`
 	box-shadow: 0 3px 15px rgba(245, 40, 145, 0.8);
 
 	@media (max-width: 840px) {
-			width: 80%;
+		width: 80%;
+		height: 100%;
 	}
 `;
 
+const ContainerFormInfos =styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	align-items: center;
+`;
+
 const FormInfos = styled.form`
-  width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	gap: 100px;
+
+	@media (max-width: 840px) {
+		flex-direction: column;
+		align-items: flex-start;
+
+		gap: 0;
+	}
+`;
+
+const ContainerInputsInfo = styled.div`
+  width: 50%;
 
 	display: flex;
 	flex-direction: column;
+
+
+	@media (max-width: 840px) {
+		width: 100%;
+		margin: 20px 0;
+
+		div {
+			align-items: center;
+			justify-content: center;
+		}
+	}
 `;
 
 const Title = styled.strong`
@@ -44,7 +78,15 @@ const Name = styled.span`
 	letter-spacing: 2px;
 `;
 
-const GrossSalary = styled.input`
+const Modality = styled.h1`
+	color: white;
+
+	font-weight: 700;
+	font-size: 25px;
+	letter-spacing: 3px;
+`;
+
+const InputForm = styled.input`
 	width: 250px;
 	height: 35px;
 
@@ -63,28 +105,37 @@ const GrossSalary = styled.input`
 	}
 `; 
 
-const Calculator = styled.button`
-	width: 150px;
-	height: 40px;
+const Calculate = styled.button`
+	width: 200px;
+	height: 42px;
 
 	background-color: #ff4791;
 	color: white;
 
-	margin-top: 10px;
+	margin: 20px 0;
 
 	cursor: pointer;
 
 	font-weight: 500;
-	font-size: 16px;
+	font-size: 18px;
 	letter-spacing: 0.5px;
 	text-transform: uppercase;
+
+	@media (max-width: 840px) {
+		width: 150px;
+
+		margin: 0 0 30px 0;
+	}
 `;
 
 export {
 	Container,
-	FormInfos,
+	ContainerFormInfos,
+	ContainerInputsInfo,
 	Title,
 	Name,
-	GrossSalary,
-	Calculator,
+	Modality,
+	InputForm,
+	Calculate,
+	FormInfos,
 }

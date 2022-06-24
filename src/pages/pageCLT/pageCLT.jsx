@@ -1,14 +1,15 @@
 import PageContainer from '../../components/pageContainer/pageContainer';
 import { 
-	Calculator, 
+	Calculate, 
 	Container, 
-	FormInfos, 
-	GrossSalary, 
+	ContainerInputsInfo, 
+	InputForm, 
 	Name, 
-	Title 
+	Title,
+	Modality,
+	FormInfos,
+	ContainerFormInfos
 } from './style';
-
-//import TableCLT from '../../components/tableCLT';
 
 const PageCLT = () => {
 	const benefits = [
@@ -25,26 +26,57 @@ const PageCLT = () => {
 			value: 900
 		},
 	]	
+
+	function teste(){
+		console.log('ue')
+	}
 	
 	return(
 		<PageContainer>
 			<Container>
-				<FormInfos>
-					<Title>Salário bruto:</Title>
-					<GrossSalary
-						placeholder='R$ 4000' 
-					/>
-					<Title>Benefícios:</Title>
-					{
-						benefits.map((benefit) => (
-							<>
-								<Name>{benefit.name}:</Name>
-								<GrossSalary placeholder={`R$ ${benefit.value}`}/>
-							</>
-						))
-					}
-					<Calculator>Calcular</Calculator>
-				</FormInfos>
+				<ContainerFormInfos>
+
+					<FormInfos>
+						<ContainerInputsInfo>
+							<Modality>CLT</Modality>
+							<Title>Salário bruto:</Title>
+							<InputForm
+								placeholder='R$ 4000' 
+							/>
+							<Title>Benefícios:</Title>
+							{
+								benefits.map((benefit, index) => (
+									<>
+										<Name>{benefit.name}:</Name>
+										<InputForm key={index}
+											placeholder={`R$ ${benefit.value}`}
+										/>
+									</>
+								))
+							}
+						</ContainerInputsInfo>
+
+						<ContainerInputsInfo>
+							<Modality>PJ</Modality>
+							<Title>Salário bruto:</Title>
+							<InputForm
+								placeholder='R$ 4000' 
+							/>
+							<Title>Benefícios:</Title>
+							{
+								benefits.map((benefit, index) => (
+									<>
+										<Name>{benefit.name}:</Name>
+										<InputForm key={index}
+											placeholder={`R$ ${benefit.value}`}
+										/>
+									</>
+								))
+							}
+						</ContainerInputsInfo>
+					</FormInfos>
+					<Calculate onClick={teste}>Calcular</Calculate>
+				</ContainerFormInfos>
 
 			</Container>
 		</PageContainer>
