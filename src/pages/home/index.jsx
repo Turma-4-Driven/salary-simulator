@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import PageContainer from '../../components/pageContainer/pageContainer';
+import PageContainer from '../../components/pageContainer';
 
 import { 
   Container, 
@@ -11,7 +11,7 @@ import {
   Title,
   Options, 
   Option, 
-} from "./style";
+} from './style';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -37,6 +37,6 @@ const Home = () => {
       </Container>
     </PageContainer>
   );
-}
+};
 
 export default Home;

@@ -1,22 +1,22 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-* {
+  * {
     box-sizing: border-box;
 
     font-family: 'Roboto', sans-serif;
     font-style: normal;
-}
+  }
 
 body {
     background-color: #121212;
 }
 
-html {
+  html {
     font-family: 'Roboto', sans-serif;
-}
+  }
 
-button {
+  button {
     font-family: 'Roboto', sans-serif;
     font-style: normal;
 
@@ -26,11 +26,11 @@ button {
     //opacity: ${p => p.isDisable ? 0.7 : 1};
     //cursor: ${p => p.isDisable ? 'wait' : 'pointer'};
     :hover {
-        filter: brightness(90%);
+      filter: brightness(90%);
     }
-}
+  }
 
-input {   
+  input {   
     font-family: 'Roboto', sans-serif;
     font-style: normal;
 
@@ -44,16 +44,16 @@ input {
         color: white;
         outline: none;
     }
-}
+  }
 
-a {
+  a {
     text-decoration: none;
     * {
-        :hover {
-            color: #1877F2;
-        }
+      :hover {
+        color: #1877F2;
+      }
     }
-}
-`
+  }
+`;
 
 export default GlobalStyle;
