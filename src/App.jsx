@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ResetStyleCSS from './styles/ResetStyleCSS';
 import GlobalStyle from './styles/GlobalStyle';
 
-import Home from './pages/home/Home';
-import PageCLT from './pages/pageCLT/pageCLT';
+import Home from './pages/home';
+import CalculatorPage from './pages/CalculatorPage';
 
 const App = () => {
   return (
@@ -14,8 +14,8 @@ const App = () => {
       
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/page-clt" element={<PageCLT />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/calculator-page' element={<CalculatorPage />} />
         </Routes>
       </BrowserRouter>
     </>

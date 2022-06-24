@@ -20,7 +20,7 @@ const Form = () => {
 
 	const handleChange = (e) => {
 		console.log({ [e.target.name]: e.target.value });
-}
+	}
 
 	return(
 		<FormInfos onSubmit={calculate}>
