@@ -41,4 +41,90 @@ const typeSalary = [
   }
 ];
 
-export default typeSalary;
+const tableInfosCLT = [
+  {
+    type: 'CLT',
+    columnData: [
+      {
+        name: 'Salário',
+        value: 2000,
+      },
+      {
+        name: 'INSS',
+        value: 2000,
+      },
+      {
+        name: 'IRPF',
+        value: 2000,
+      },
+      {
+        name: 'FGTS',
+        value: 2000,
+      },
+      {
+        name: '13 salário',
+        value: 2000,
+      },
+      {
+        name: 'Férias',
+        value: 2000,
+      },
+      {
+        name: 'Benefícios',
+        value: 2000,
+      },
+      {
+        name: 'Outros benefícios',
+        value: 2000,
+      },
+    ],
+    total: '2000',
+  }
+];
+
+const tableInfosPJ = [
+  {
+    type: 'PJ',
+    columnData: [
+      {
+        name: 'Salário',
+        value: 2000,
+      },
+      {
+        name: 'INSS',
+        value: 2000,
+      },
+      {
+        name: 'IRPF',
+        value: 2000,
+      },
+      {
+        name: 'FGTS',
+        value: 2000,
+      },
+      {
+        name: '13 salário',
+        value: 2000,
+      },
+      {
+        name: 'Férias',
+        value: 2000,
+      },
+      {
+        name: 'Benefícios',
+        value: 2000,
+      },
+      {
+        name: 'Outros benefícios',
+        value: 2000,
+      },
+    ],
+    total: '2000',
+  }
+];
+
+export {
+  typeSalary,
+  tableInfosCLT,
+  tableInfosPJ
+};
