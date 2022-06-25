@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 import {
   Calculate,
@@ -15,6 +16,23 @@ import { typeSalary } from '../../utils';
 
 const Form = () => {
   const navigate = useNavigate();
+
+  const defaultMaskOptions = {
+    prefix: 'R$ ',
+    suffix: '',
+    includeThousandsSeparator: true,
+    thousandsSeparatorSymbol: '.',
+    allowDecimal: true,
+    decimalSymbol: ',',
+    decimalLimit: 2,
+    integerLimit: 7,
+    allowNegative: false,
+    allowLeadingZeroes: false,
+  };
+
+  const currencyMask = createNumberMask({
+    ...defaultMaskOptions,
+  });
 
   const calculate = (e) => {
     e.preventDefault();
@@ -40,6 +58,8 @@ const Form = () => {
                 name={`${typeSalary.title}`}
                 placeholder={`R$ ${typeSalary.placeholder}`}
                 onChange={handleChange}
+                mask={currencyMask}
+                required
               />
 
               <Title>{typeSalary.titleInput}:</Title>
@@ -51,6 +71,7 @@ const Form = () => {
                       name={`${benefits.name}`}
                       placeholder={`R$ ${benefits.value}`}
                       onChange={handleChange}
+                      mask={currencyMask}
                     />
                   </>
                 ))

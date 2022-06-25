@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import MaskedInput from 'react-text-mask';
 
 const FormInfos = styled.form`
   display: flex;
@@ -27,7 +28,6 @@ const ContainerInputsInfo = styled.div`
 
   display: flex;
   flex-direction: column;
-
 
   @media (max-width: 840px) {
     width: 100%;
@@ -66,13 +66,13 @@ const Modality = styled.h1`
   letter-spacing: 3px;
 `;
 
-const InputForm = styled.input`
+const InputForm = styled(MaskedInput)`
   width: 250px;
   height: 35px;
 
   background-color: #121212;
   color: white;
-  
+
   border-radius: 3px;
   border: 1px solid #ff4791;
 
@@ -81,7 +81,7 @@ const InputForm = styled.input`
   padding-left: 10px;
   margin: 5px 0 15px 0;
 
-  ::placeholder{
+  ::placeholder {
     color: white;
     opacity: 0.5;
   }
