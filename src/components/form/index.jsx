@@ -11,7 +11,7 @@ import {
   Title
 } from './style';
 
-import typeSalary from '../../utils';
+import { typeSalary } from '../../utils';
 
 const Form = () => {
   const navigate = useNavigate();
