@@ -8,9 +8,9 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-  body {
-    background-color: black;
-  }
+body {
+    background-color: #121212;
+}
 
   html {
     font-family: 'Roboto', sans-serif;
@@ -38,11 +38,11 @@ const GlobalStyle = createGlobalStyle`
     //pointer-events: ${p => p.isDisable ? 'wait' : 'all'};
 
     ::placeholder {
-      color: #575757;
+        color: white;
     }
     :focus {
-      color: #1976D2;
-      outline: none;
+        color: white;
+        outline: none;
     }
   }
 

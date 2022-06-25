@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import PageContainer from '../../components/pageContainer/PageContainer';
+import PageContainer from '../../components/pageContainer';
 
 import { 
   Container, 
@@ -28,10 +28,9 @@ const Home = () => {
         </ContainerAbout>
 
         <Modalities>
-          <Title>Modalidades:</Title>
+          <Title>Vamos começar!</Title>
           <Options>
-            <Option onClick={() => navigate('/page-clt')}>CLT</Option>
-            <Option onClick={() => navigate('/page-pj')}>PJ</Option>
+            <Option onClick={() => navigate('/calculator-page')}>Iniciar</Option>
           </Options>
         </Modalities>
       </Container>
