@@ -1,4 +1,5 @@
 import { tableInfosCLT } from '../../utils';
+import ProjectionsCLt from '../projections/projectionsCLt';
 
 import { 
   Body, 
@@ -8,7 +9,7 @@ import {
   Footer, 
   Header, 
   NameFooter, 
-  Title, 
+  TitleCLT, 
   TitleHeader, 
   ValueFooter, 
   ValueHeader 
@@ -21,7 +22,7 @@ const TableCLT = () => {
       {
         tableInfosCLT.map((tableInfosCLT)=> (
           <>
-            <Title>{`${tableInfosCLT.type}:`}</Title>
+            <TitleCLT>{`${tableInfosCLT.type}:`}</TitleCLT>
             <ContainerTable>
               <Header>
                 <TitleHeader>
@@ -35,7 +36,7 @@ const TableCLT = () => {
                 tableInfosCLT.columnData.map((columnData, i) => (
                   <Body key={i}>
                     <Column>
-                      <span>{columnData.name}</span>
+                      <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
                       <span>{columnData.value}</span>
@@ -57,6 +58,8 @@ const TableCLT = () => {
           </>
         ))
       } 
+      <ProjectionsCLt />
+
     </Container>
   );
 };

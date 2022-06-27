@@ -1,5 +1,3 @@
-import { tableInfosPJ } from '../../utils';
-
 import { 
   Body, 
   Column, 
@@ -8,11 +6,15 @@ import {
   Footer, 
   Header, 
   NameFooter, 
-  Title, 
+  TitlePJ, 
   TitleHeader, 
   ValueFooter, 
   ValueHeader 
 } from './style';
+
+import { tableInfosPJ } from '../../utils';
+
+import ProjectionsPJ from '../projections/projectionsPJ';
 
 const TablePJ = () => {
 
@@ -21,7 +23,7 @@ const TablePJ = () => {
       {
         tableInfosPJ.map((tableInfosPJ)=> (
           <>
-            <Title>{`${tableInfosPJ.type}:`}</Title>
+            <TitlePJ>{`${tableInfosPJ.type}:`}</TitlePJ>
             <ContainerTable>
               <Header>
                 <TitleHeader>
@@ -35,7 +37,7 @@ const TablePJ = () => {
                 tableInfosPJ.columnData.map((columnData, i) => (
                   <Body key={i}>
                     <Column>
-                      <span>{columnData.name}</span>
+                      <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
                       <span>{columnData.value}</span>
@@ -57,6 +59,8 @@ const TablePJ = () => {
           </>
         ))
       } 
+      <ProjectionsPJ />
+
     </Container>
   );
 };
