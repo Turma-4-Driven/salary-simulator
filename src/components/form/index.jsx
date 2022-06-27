@@ -56,7 +56,7 @@ const Form = () => {
 
               <Title>{typeSalary.title}:</Title>
               <InputForm key={index}
-                name={`${typeSalary.title}`}
+                name={`${typeSalary.modality}: ${typeSalary.title}`}
                 placeholder={toBrazilianCurrency(typeSalary.placeholder)}
                 onChange={handleChange}
                 mask={currencyMask}
@@ -69,7 +69,7 @@ const Form = () => {
                   <>
                     <Name>{benefits.name}:</Name>
                     <InputForm key={index}
-                      name={`${benefits.name}`}
+                      name={`${typeSalary.modality}: ${benefits.name}`}
                       placeholder={toBrazilianCurrency(benefits.value)}
                       onChange={handleChange}
                       mask={currencyMask}

@@ -78,7 +78,35 @@ const tableInfosCLT = [
         value: 2000,
       },
     ],
-    total: '2000',
+    total: 2000,
+    monthlyProjection:[
+      {
+        name: 'Salário Bruto',
+        value: 2000,
+      },
+      {
+        name: 'Salário Líquido',
+        value: 2000,
+      },
+      {
+        name: 'Benefícios (total)',
+        value: 2000,
+      },
+      {
+        name: 'Descontos',
+        value: 2000,
+      },
+    ],
+    annualProjection:[
+      {
+        name: 'Salário Bruto',
+        value: 2000,
+      },
+      {
+        name: 'Salário Líquido',
+        value: 2000,
+      },
+    ],
   }
 ];
 
@@ -119,7 +147,35 @@ const tableInfosPJ = [
         value: 2000,
       },
     ],
-    total: '2000',
+    total: 2000,
+    monthlyProjection:[
+      {
+        name: 'Salário Bruto',
+        value: 2000,
+      },
+      {
+        name: 'Salário Líquido',
+        value: 2000,
+      },
+      {
+        name: 'Benefícios (total)',
+        value: 2000,
+      },
+      {
+        name: 'Descontos',
+        value: 2000,
+      },
+    ],
+    annualProjection:[
+      {
+        name: 'Salário Bruto',
+        value: 2000,
+      },
+      {
+        name: 'Salário Líquido',
+        value: 2000,
+      },
+    ],
   }
 ];
 
