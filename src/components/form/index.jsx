@@ -13,10 +13,11 @@ import {
 } from './style';
 
 import { typeSalary } from '../../utils';
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
 
 const Form = () => {
   const navigate = useNavigate();
-
+  
   const defaultMaskOptions = {
     prefix: 'R$ ',
     suffix: '',
@@ -56,7 +57,7 @@ const Form = () => {
               <Title>{typeSalary.title}:</Title>
               <InputForm key={index}
                 name={`${typeSalary.title}`}
-                placeholder={`R$ ${typeSalary.placeholder}`}
+                placeholder={toBrazilianCurrency(typeSalary.placeholder)}
                 onChange={handleChange}
                 mask={currencyMask}
                 required
@@ -69,7 +70,7 @@ const Form = () => {
                     <Name>{benefits.name}:</Name>
                     <InputForm key={index}
                       name={`${benefits.name}`}
-                      placeholder={`R$ ${benefits.value}`}
+                      placeholder={toBrazilianCurrency(benefits.value)}
                       onChange={handleChange}
                       mask={currencyMask}
                     />
