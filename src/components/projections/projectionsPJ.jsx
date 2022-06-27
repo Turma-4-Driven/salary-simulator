@@ -1,3 +1,6 @@
+import { tableInfosPJ } from '../../utils';
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+
 import { 
   Container, 
   ContainerProjectionsAnual, 
@@ -7,8 +10,6 @@ import {
   ProjectionsAnual, 
   ProjectionsMensal 
 } from './style';
-
-import { tableInfosPJ } from '../../utils';
 
 const ProjectionsPJ = () => {
   return (
@@ -26,12 +27,12 @@ const ProjectionsPJ = () => {
 
                       <ProjectionMensal focus key={i}>
                         <strong>{`${monthlyProjection.name}:`}</strong>
-                        <span>{`R$ ${monthlyProjection.value}`}</span>
+                        <span>{toBrazilianCurrency(monthlyProjection.value)}</span>
                       </ProjectionMensal>
                       :
                       <ProjectionMensal key={i}>
                         <strong>{`${monthlyProjection.name}:`}</strong>
-                        <span>{`R$ ${monthlyProjection.value}`}</span>
+                        <span>{toBrazilianCurrency(monthlyProjection.value)}</span>
                       </ProjectionMensal>
                   ))
                 }
@@ -46,7 +47,7 @@ const ProjectionsPJ = () => {
 
                     <ProjectionAnual key={i}>
                       <strong>{`${annualProjection.name}:`}</strong>
-                      <span>{`R$ ${annualProjection.value}`}</span>
+                      <span>{toBrazilianCurrency(annualProjection.value)}</span>
                     </ProjectionAnual>
                   ))
                 }

@@ -1,3 +1,8 @@
+import { tableInfosPJ } from '../../utils';
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+
+import ProjectionsPJ from '../projections/projectionsPJ';
+
 import { 
   Body, 
   Column, 
@@ -11,10 +16,6 @@ import {
   ValueFooter, 
   ValueHeader 
 } from './style';
-
-import { tableInfosPJ } from '../../utils';
-
-import ProjectionsPJ from '../projections/projectionsPJ';
 
 const TablePJ = () => {
 
@@ -40,7 +41,7 @@ const TablePJ = () => {
                       <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
-                      <span>{`R$ ${columnData.value}`}</span>
+                      <span>{toBrazilianCurrency(columnData.value)}</span>
                     </Column>
                   </Body>
                 ))
@@ -51,7 +52,7 @@ const TablePJ = () => {
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{`R$ ${tableInfosPJ.total}`}</span>
+                  <span>{toBrazilianCurrency(tableInfosPJ.total)}</span>
                 </ValueFooter>
               </Footer>
 

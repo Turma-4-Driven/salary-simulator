@@ -18,7 +18,7 @@ const ContainerProjectionsMensal = styled.div`
   display: flex;
   flex-direction: column;
 
-  h1{
+  h1 {
     color: white;
 
     margin-bottom: 20px;
@@ -36,7 +36,7 @@ const ContainerProjectionsAnual = styled.div`
 
   width: 100%;
 
-  h1{
+  h1 {
     color: white;
 
     margin-bottom: 20px;
@@ -60,7 +60,7 @@ const ProjectionsAnual = styled.div`
   display: flex;
   justify-content: space-around;
 
-  strong{
+  strong {
     color: white;
 
     font-weight: 500;
@@ -68,7 +68,7 @@ const ProjectionsAnual = styled.div`
     letter-spacing: 1px;
   }
 
-  span{
+  span {
     color: white;
 
     margin-top: 5px;
@@ -88,7 +88,7 @@ const ProjectionMensal = styled.div`
 
   margin-bottom: 10px;
 
-  strong{
+  strong {
     color: ${p => p.focus ? '#ff4791' : '#ffffff'};
 
     font-weight: 500;
@@ -96,7 +96,7 @@ const ProjectionMensal = styled.div`
     letter-spacing: 1px;
   }
 
-  span{
+  span {
     color: ${p => p.focus ? '#ff4791' : '#ffffff'};
 
     margin-top: 6px;

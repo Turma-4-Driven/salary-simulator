@@ -57,7 +57,7 @@ const Header = styled.div`
 
   margin-bottom: 20px;
 
-  span{
+  span {
     color: white;
     align-items: flex-start;
 
@@ -75,7 +75,7 @@ const TitleHeader = styled.div`
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -92,7 +92,7 @@ const ValueHeader = styled.div`
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -117,7 +117,7 @@ const Body = styled.div`
 
   word-break: break-word;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -134,7 +134,7 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -145,7 +145,7 @@ const Column = styled.div`
     margin: 0 0 10px 5px;
   }
 
-  strong{
+  strong {
     color: white;
 
     font-weight: 500;
@@ -156,7 +156,7 @@ const Column = styled.div`
   }
 
   @media (max-width: 840px) {
-    span{
+    span {
       margin-left: 20px;
     }
   } 
@@ -170,7 +170,7 @@ const Footer = styled.div`
 
   border-top: 1px solid #ff4791;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -187,7 +187,7 @@ const NameFooter = styled.div`
   display: flex;
   flex-direction: column;
 
-  strong{
+  strong {
     color: white;
 
     font-weight: 500;
@@ -204,7 +204,7 @@ const ValueFooter = styled.div`
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -216,7 +216,7 @@ const ValueFooter = styled.div`
   }
 
   @media (max-width: 840px) {
-    span{
+    span {
       margin-left: 20px;
     }
   } 

@@ -9,6 +9,7 @@ import {
 } from './style';
 
 import { tableInfosCLT } from '../../utils';
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
 
 const ProjectionsCLt = () => {
   return (
@@ -26,12 +27,12 @@ const ProjectionsCLt = () => {
 
                       <ProjectionMensal focus key={i}>
                         <strong>{`${monthlyProjection.name}:`}</strong>
-                        <span>{`R$ ${monthlyProjection.value}`}</span>
+                        <span>{toBrazilianCurrency(monthlyProjection.value)}</span>
                       </ProjectionMensal>
                       :
                       <ProjectionMensal key={i}>
                         <strong>{`${monthlyProjection.name}:`}</strong>
-                        <span>{`R$ ${monthlyProjection.value}`}</span>
+                        <span>{toBrazilianCurrency(monthlyProjection.value)}</span>
                       </ProjectionMensal>
                   ))
                 }
@@ -46,7 +47,7 @@ const ProjectionsCLt = () => {
 
                     <ProjectionAnual key={i}>
                       <strong>{`${annualProjection.name}:`}</strong>
-                      <span>{`R$ ${annualProjection.value}`}</span>
+                      <span>{toBrazilianCurrency(annualProjection.value)}</span>
                     </ProjectionAnual>
                   ))
                 }

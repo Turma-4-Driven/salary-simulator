@@ -1,6 +1,9 @@
 import { useNavigate } from 'react-router-dom';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
+import { typeSalary } from '../../utils';
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+
 import {
   Calculate,
   FormInfos,
@@ -11,9 +14,6 @@ import {
   Name,
   Title
 } from './style';
-
-import { typeSalary } from '../../utils';
-import { toBrazilianCurrency } from '../../helpers/currencyHelper';
 
 const Form = () => {
   const navigate = useNavigate();

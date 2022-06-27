@@ -1,4 +1,6 @@
+import { toBrazilianCurrency } from '../../helpers/currencyHelper';
 import { tableInfosCLT } from '../../utils';
+
 import ProjectionsCLt from '../projections/projectionsCLt';
 
 import { 
@@ -39,7 +41,7 @@ const TableCLT = () => {
                       <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
-                      <span>{`R$ ${columnData.value}`}</span>
+                      <span>{toBrazilianCurrency(columnData.value)}</span>
                     </Column>
                   </Body>
                 ))
@@ -50,7 +52,7 @@ const TableCLT = () => {
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{`R$ ${tableInfosCLT.total}`}</span>
+                  <span>{toBrazilianCurrency(tableInfosCLT.total)}</span>
                 </ValueFooter>
               </Footer>
 

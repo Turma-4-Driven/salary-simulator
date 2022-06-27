@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
 body {
-    background-color: #121212;
+  background-color: #121212;
 }
 
   html {
@@ -38,11 +38,11 @@ body {
     //pointer-events: ${p => p.isDisable ? 'wait' : 'all'};
 
     ::placeholder {
-        color: white;
+      color: white;
     }
     :focus {
-        color: white;
-        outline: none;
+      color: white;
+      outline: none;
     }
   }
 
