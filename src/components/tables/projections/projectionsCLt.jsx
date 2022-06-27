@@ -1,3 +1,6 @@
+import { toBrazilianCurrency } from '../../../helpers/currencyHelper';
+import { TABLE_INFOS_CLT } from '../utils/tableInfos';
+
 import { 
   Container, 
   ContainerProjectionsAnual, 
@@ -8,14 +11,11 @@ import {
   ProjectionsMensal 
 } from './style';
 
-import { tableInfosCLT } from '../../utils';
-import { toBrazilianCurrency } from '../../helpers/currencyHelper';
-
 const ProjectionsCLt = () => {
   return (
     <Container>
       {
-        tableInfosCLT.map((projections, index) => (
+        TABLE_INFOS_CLT.map((projections, index) => (
           <>
             <ContainerProjectionsMensal key={index}>
               <h1>Projeção Mensal:</h1>

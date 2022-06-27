@@ -1,7 +1,7 @@
 import { toBrazilianCurrency } from '../../helpers/currencyHelper';
-import { tableInfosCLT } from '../../utils';
+import { TABLE_INFOS_CLT } from './utils/tableInfos';
 
-import ProjectionsCLt from '../projections/projectionsCLt';
+import ProjectionsCLt from './projections/projectionsCLt';
 
 import { 
   Body, 
@@ -22,7 +22,7 @@ const TableCLT = () => {
   return (
     <Container>
       {
-        tableInfosCLT.map((tableInfosCLT)=> (
+        TABLE_INFOS_CLT.map((tableInfosCLT)=> (
           <>
             <TitleCLT>{`${tableInfosCLT.type}:`}</TitleCLT>
             <ContainerTable>

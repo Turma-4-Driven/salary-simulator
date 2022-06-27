@@ -1,7 +1,7 @@
-import { tableInfosPJ } from '../../utils';
 import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+import { TABLE_INFOS_PJ } from './utils/tableInfos';
 
-import ProjectionsPJ from '../projections/projectionsPJ';
+import ProjectionsPJ from './projections/projectionsPJ';
 
 import { 
   Body, 
@@ -22,7 +22,7 @@ const TablePJ = () => {
   return (
     <Container>
       {
-        tableInfosPJ.map((tableInfosPJ)=> (
+        TABLE_INFOS_PJ.map((tableInfosPJ)=> (
           <>
             <TitlePJ>{`${tableInfosPJ.type}:`}</TitlePJ>
             <ContainerTable>

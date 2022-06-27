@@ -1,5 +1,5 @@
-import { tableInfosPJ } from '../../utils';
-import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+import { toBrazilianCurrency } from '../../../helpers/currencyHelper';
+import { TABLE_INFOS_PJ } from '../utils/tableInfos';
 
 import { 
   Container, 
@@ -15,7 +15,7 @@ const ProjectionsPJ = () => {
   return (
     <Container>
       {
-        tableInfosPJ.map((projections, index) => (
+        TABLE_INFOS_PJ.map((projections, index) => (
           <>
             <ContainerProjectionsMensal key={index}>
               <h1>Projeção Mensal:</h1>

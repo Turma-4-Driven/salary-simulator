@@ -1,7 +1,8 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
-import { typeSalary } from '../../utils';
+import { TYPES_SALARY } from './utils/salaryInputsInfo';
 import { toBrazilianCurrency } from '../../helpers/currencyHelper';
 
 import {
@@ -17,6 +18,7 @@ import {
 
 const Form = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({});
   
   const defaultMaskOptions = {
     prefix: 'R$ ',
@@ -43,20 +45,29 @@ const Form = () => {
   };
 
   const handleChange = (e) => {
-    console.log({ [e.target.name]: e.target.value });
+    // console.log({ [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+    console.log({ newFormData:
+      {
+        ...formData,
+        [e.target.name]: e.target.value
+      } });
   };
 
   return (
     <FormInfos onSubmit={calculate}>
       <ContainerInfos>
         {
-          typeSalary.map((typeSalary, index) => (
+          TYPES_SALARY.map((typeSalary, index) => (
             <ContainerInputsInfo key={index}>
               <Modality>{typeSalary.modality}</Modality>
 
               <Title>{typeSalary.title}:</Title>
               <InputForm key={index}
-                name={`${typeSalary.modality}: ${typeSalary.title}`}
+                name={`${typeSalary.modality}-${typeSalary.title}`}
                 placeholder={toBrazilianCurrency(typeSalary.placeholder)}
                 onChange={handleChange}
                 mask={currencyMask}
@@ -69,7 +80,7 @@ const Form = () => {
                   <>
                     <Name>{benefits.name}:</Name>
                     <InputForm key={index}
-                      name={`${typeSalary.modality}: ${benefits.name}`}
+                      name={`${typeSalary.modality}-${benefits.id}`}
                       placeholder={toBrazilianCurrency(benefits.value)}
                       onChange={handleChange}
                       mask={currencyMask}
