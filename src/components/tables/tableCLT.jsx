@@ -39,18 +39,18 @@ const TableCLT = () => {
                       <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
-                      <span>{columnData.value}</span>
+                      <span>{`R$ ${columnData.value}`}</span>
                     </Column>
                   </Body>
                 ))
               }
               <Footer>
                 <NameFooter>
-                  <span>Líquido</span>
+                  <strong>Líquido</strong>
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{tableInfosCLT.total}</span>
+                  <span>{`R$ ${tableInfosCLT.total}`}</span>
                 </ValueFooter>
               </Footer>
 

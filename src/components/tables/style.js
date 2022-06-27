@@ -87,7 +87,7 @@ const TitleHeader = styled.div`
 `;
 
 const ValueHeader = styled.div`
-  width: 30%;
+  width: 100px;
 
   display: flex;
   flex-direction: column;
@@ -100,6 +100,10 @@ const ValueHeader = styled.div`
     letter-spacing: 1px;
 
     margin-bottom: 10px;
+  }
+
+  @media (max-width: 840px) {
+    margin-left: 50px;
   }
 `;
 
@@ -138,6 +142,7 @@ const Column = styled.div`
     letter-spacing: 1px;
 
     margin-bottom: 10px;
+    margin: 0 0 10px 5px;
   }
 
   strong{
@@ -182,7 +187,7 @@ const NameFooter = styled.div`
   display: flex;
   flex-direction: column;
 
-  span{
+  strong{
     color: white;
 
     font-weight: 500;
@@ -207,7 +212,14 @@ const ValueFooter = styled.div`
     letter-spacing: 1px;
 
     margin-top: 10px;
+    margin-left: 5px;
   }
+
+  @media (max-width: 840px) {
+    span{
+      margin-left: 20px;
+    }
+  } 
 `;
 
 export {

@@ -40,18 +40,18 @@ const TablePJ = () => {
                       <strong>{columnData.name}</strong>
                     </Column>
                     <Column>
-                      <span>{columnData.value}</span>
+                      <span>{`R$ ${columnData.value}`}</span>
                     </Column>
                   </Body>
                 ))
               }
               <Footer>
                 <NameFooter>
-                  <span>Líquido</span>
+                  <strong>Líquido</strong>
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{tableInfosPJ.total}</span>
+                  <span>{`R$ ${tableInfosPJ.total}`}</span>
                 </ValueFooter>
               </Footer>
 
