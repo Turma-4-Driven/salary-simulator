@@ -54,11 +54,15 @@ const Description = styled.p`
 `;
 
 const Modalities = styled.div`
-  @media (max-width: 840px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* @media (max-width: 840px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
+  } */
 `;
 
 const Title = styled.span`
