@@ -1,4 +1,5 @@
 import { currencyRound } from './currencyHelper';
+// const currencyRound = (value) => Math.round(value * 100) / 100;
 
 // Dados de IR atualizados com valores de 2022
 const cltIrTaxes = [
@@ -45,8 +46,36 @@ const cltInssTaxes = [
 ];
 // Dados de deduções por dependente atualizados com valores de 2022
 const dependentDeduction = 189.59;
+// Multiplicadores de métricas CLT atualizados com valores de 2022
 const fgtsMultiplier = (8 / 100);
 const vacationSalaryMultiplier = (1 + 1/3);
+// Multiplicadores de métricas PJ atualizados com valores de 2022
+const federalTaxMultiplier = (6 / 100);
+const proLaborMultiplier = (28 / 100);
+const pjInssTaxMultiplier = (11 / 100);
+// Estipulação de custo para abertura de um CNPJ, valores atualizados de 2022
+const cnpjOpenCosts = [
+  {
+    name: 'Abertura',
+    value: 1300,
+  },
+  {
+    name: 'Alvará',
+    value: 300.00,
+  },
+  {
+    name: 'Certificados Digitais',
+    value: 235.00,
+  },
+  {
+    name: 'Valor Total',
+    value: 1835.00,
+  },
+];
+const totalCnpjOpenCost = cnpjOpenCosts.reduce((acc, cur) => acc + cur.value, 0);
+const monthlyCnpjOpenCost = currencyRound(totalCnpjOpenCost / 12);
+// Estipulação do custo mensal com contabilidade de um CNPJ
+const cnpjMonthlyCostDefault = 250;
 
 /**
  * Função que calcula um desconto através de uma tabela de faixas com taxas progressivas
@@ -94,6 +123,8 @@ const makeRangeTaxesWithEnd = (taxList) => {
   return output;
 };
 
+
+// Cálculos para CLT
 const calcDependentsDeduction = (dependentsQuantity) => {
   return currencyRound(dependentsQuantity * dependentDeduction);
 };
@@ -131,8 +162,9 @@ const calcCltMonthlySalary = ({
 }) => {
   const salaryWithBenefits = salary + totalBenefits;
   const vacationWithFgts = vacationSalary + calcCltFgts(vacationSalary);
+
   const monthlySalary = salaryWithBenefits * (13 / 12) + (vacationWithFgts / 12);  // salário, décimo terceiro e férias; não considero que as férias terão benefícios (VA/VR, ...)
-  const monthlyDiscounts = (inss + ir) + ((inss + ir) / 12) + ((vacationInss + vacationIr) / 12);
+  const monthlyDiscounts = (inss + ir) * (13 / 12) + ((vacationInss + vacationIr) / 12);
   const monthlyNetSalary = monthlySalary - monthlyDiscounts;
 
   return {
@@ -142,7 +174,7 @@ const calcCltMonthlySalary = ({
   };
 };
 
-const calcCltAnualSalary = ({ monthlySalary, monthlyNetSalary }) => {
+const calcAnualSalary = ({ monthlySalary, monthlyNetSalary }) => {
   return {
     annualSalary: currencyRound(monthlySalary * 12),
     annualNetSalary: currencyRound(monthlyNetSalary * 12),
@@ -188,7 +220,7 @@ const calcCltSalaryInfo = ({
     totalBenefits,
   });
 
-  const { annualSalary, annualNetSalary } = calcCltAnualSalary({
+  const { annualSalary, annualNetSalary } = calcAnualSalary({
     monthlySalary,
     monthlyNetSalary,
   });
@@ -211,9 +243,106 @@ const calcCltSalaryInfo = ({
   };
 };
 
+// Cálculos para PJ
+const calcPjIr = (salary) => {
+  return currencyRound(salary * federalTaxMultiplier);
+};
+
+const calcProLabor = (salary) => {
+  return currencyRound(salary * proLaborMultiplier);
+};
+
+const calcPjInss = (proLabor) => {
+  return currencyRound(proLabor * pjInssTaxMultiplier);
+};
+
+const calcPjMonthlySalary = ({
+  salary,
+  ir,
+  inss,
+  salary13,
+  vacationSalary,
+  totalBenefits,
+  accountingValue,
+}) => {
+  // Considerei que tanto o 13º quanto as férias são valores dados a parte, não precisando ser os comuns calculados no CLT
+  const monthlySalary13 = salary13 / 12 || 0;
+  const monthlyVacationSalary = vacationSalary / 12 || 0;
+  const monthlyAccountingValue = accountingValue || cnpjMonthlyCostDefault;
+
+  const monthlySalary = salary + monthlySalary13 + monthlyVacationSalary + totalBenefits;
+  const monthlyDiscounts = ir + inss + monthlyCnpjOpenCost + monthlyAccountingValue;
+  const monthlyNetSalary = monthlySalary - monthlyDiscounts;
+
+  return {
+    monthlySalary: currencyRound(monthlySalary),
+    monthlyDiscounts: currencyRound(monthlyDiscounts),
+    monthlyNetSalary: currencyRound(monthlyNetSalary),
+  };
+};
+
+const calcPjSalaryInfo = ({
+  salary,
+  foodVoucher,
+  healthPlan,
+  otherBenefits,
+  salary13,
+  vacationSalary,
+  accountingValue,
+}) => {
+  const ir = calcPjIr(salary);
+
+  const proLabor = calcProLabor(salary);
+
+  const inss = calcPjInss(proLabor);
+
+  const totalBenefits = foodVoucher + healthPlan + otherBenefits;
+
+  const {
+    monthlySalary,
+    monthlyDiscounts,
+    monthlyNetSalary,
+  } = calcPjMonthlySalary({
+    salary,
+    ir,
+    inss,
+    salary13,
+    vacationSalary,
+    totalBenefits,
+    accountingValue,
+  });
+
+  const { annualSalary, annualNetSalary } = calcAnualSalary({
+    monthlySalary,
+    monthlyNetSalary,
+  });
+
+  return {
+    salary,
+    inss,
+    ir,
+    foodVoucher,
+    healthPlan,
+    otherBenefits,
+    salary13: salary13 || 0,
+    vacationSalary: vacationSalary || 0,
+    monthlySalary,
+    monthlyDiscounts,
+    monthlyNetSalary,
+    annualSalary,
+    annualNetSalary,
+  };
+};
+
+
+export {
+  calcCltSalaryInfo,
+  calcPjSalaryInfo,
+};
+
+
 
 /* Tests
-const currencyRound = (value) => Math.round(value * 100) / 100;
 const value = 5000;
 
 const discountInss = calcRangeTableDiscount(value, cltInssTaxes);
@@ -223,12 +352,24 @@ console.log({
   discountIr,
 });
 
+console.log('CLT:');
 console.log(calcCltSalaryInfo({
-  salary: 10000,
+  salary: 7000,
   foodVoucher: 700,
   healthPlan: 300,
   otherBenefits: 500,
   dependentsQuant: 0,
   otherDeductions: 0,
+}));
+
+console.log('PJ:');
+console.log(calcPjSalaryInfo({
+  salary: 9100,
+  foodVoucher: 700,
+  healthPlan: 300,
+  otherBenefits: 500,
+  // salary13: 0,
+  // vacationSalary: 0,
+  // accountingValue,
 }));
 */
