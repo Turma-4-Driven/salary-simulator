@@ -55,7 +55,7 @@ const Form = () => {
 
               <Title>{typeSalary.title}:</Title>
               <InputForm key={index}
-                name={`${typeSalary.title}`}
+                name={`${typeSalary.modality}: ${typeSalary.title}`}
                 placeholder={`R$ ${typeSalary.placeholder}`}
                 onChange={handleChange}
                 mask={currencyMask}
@@ -68,7 +68,7 @@ const Form = () => {
                   <>
                     <Name>{benefits.name}:</Name>
                     <InputForm key={index}
-                      name={`${benefits.name}`}
+                      name={`${typeSalary.modality}: ${benefits.name}`}
                       placeholder={`R$ ${benefits.value}`}
                       onChange={handleChange}
                       mask={currencyMask}
