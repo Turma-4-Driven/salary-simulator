@@ -6,7 +6,7 @@ const Container = styled.div`
   align-items: flex-start;
 `;
 
-const Title = styled.h1`
+const TitleCLT = styled.h1`
   color: white;
 
   font-weight: 700;
@@ -14,19 +14,41 @@ const Title = styled.h1`
   letter-spacing: 3px;
 
   margin: 40px 40px;
+
+  @media (max-width: 840px) {
+    margin: 40px 40px 20px 40px;
+  }
+`;
+
+const TitlePJ = styled.h1`
+  color: white;
+
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 3px;
+
+  margin: 40px 40px;
+
+  @media (max-width: 840px) {
+    margin: 20px 40px;
+  }
 `;
 
 const ContainerTable = styled.div`
-  width: 40%;
+  width: 90%;
 
   display: flex;
   flex-direction: column;
 
   margin: 0 30px;
+
+  @media (max-width: 840px) {
+    margin: 0 20px;
+  } 
 `;
 
 const Header = styled.div`
-  width: 500px;
+  width: 100%;
 
   display: flex;
   justify-content: space-around;
@@ -38,6 +60,10 @@ const Header = styled.div`
   span{
     color: white;
     align-items: flex-start;
+
+    font-weight: 700;
+    font-size: 25px;
+    letter-spacing: 3px;
 
     margin-bottom: 10px;
   }
@@ -52,12 +78,16 @@ const TitleHeader = styled.div`
   span{
     color: white;
 
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 1px;
+
     margin-bottom: 10px;
   }
 `;
 
 const ValueHeader = styled.div`
-  width: 100px;
+  width: 30%;
 
   display: flex;
   flex-direction: column;
@@ -65,12 +95,16 @@ const ValueHeader = styled.div`
   span{
     color: white;
 
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: 1px;
+
     margin-bottom: 10px;
   }
 `;
 
 const Body = styled.div`
-  width: 500px;
+  width: 100%;
 
   display: flex;
   justify-content: space-around;
@@ -81,6 +115,10 @@ const Body = styled.div`
 
   span{
     color: white;
+
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
 
     margin-bottom: 10px;
   }
@@ -95,12 +133,32 @@ const Column = styled.div`
   span{
     color: white;
 
-    margin-bottom: 10px auto;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    margin-bottom: 10px;
   }
+
+  strong{
+    color: white;
+
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 1px;
+
+    margin: 0 0 10px 5px;
+  }
+
+  @media (max-width: 840px) {
+    span{
+      margin-left: 20px;
+    }
+  } 
 `;
 
 const Footer = styled.div`
-  width: 500px;
+  width: 100%;
 
   display: flex;
   justify-content: space-around;
@@ -109,6 +167,10 @@ const Footer = styled.div`
 
   span{
     color: white;
+
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
 
     margin-bottom: 10px;
   }
@@ -123,6 +185,10 @@ const NameFooter = styled.div`
   span{
     color: white;
 
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+
     margin-top: 10px;
   }
 `;
@@ -136,6 +202,10 @@ const ValueFooter = styled.div`
   span{
     color: white;
 
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 1px;
+
     margin-top: 10px;
   }
 `;
@@ -143,7 +213,8 @@ const ValueFooter = styled.div`
 export {
   Container,
   ContainerTable,
-  Title,
+  TitleCLT,
+  TitlePJ,
   TitleHeader,
   Header,
   ValueHeader,
