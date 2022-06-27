@@ -5,16 +5,23 @@ import TablePJ from '../../components/tables/tablePJ';
 
 import { Container, ContainerTables } from './style';
 
+import NewSimulation from '../../components/newSimulation';
+import Header from '../../components/header';
+
 const SummaryPage = () => {
   return(
-    <PageContainer>
-      <Container>
-        <ContainerTables>
-          <TableCLT/>
-          <TablePJ />
-        </ContainerTables>
-      </Container>
-    </PageContainer>
+    <>
+      <Header />
+      <PageContainer>
+        <Container>
+          <ContainerTables>
+            <TableCLT/>
+            <TablePJ />
+          </ContainerTables>
+          <NewSimulation />
+        </Container>
+      </PageContainer>
+    </>
   );
 };
 

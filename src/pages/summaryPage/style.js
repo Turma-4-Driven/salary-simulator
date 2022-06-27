@@ -32,7 +32,7 @@ const Container = styled.div`
 
 const ContainerTables = styled.div`
   width: 100%;
-  max-height: 100vh;
+  max-height: 900px;
 
   display: flex;
   justify-content: center;
