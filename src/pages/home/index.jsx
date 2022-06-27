@@ -28,7 +28,7 @@ const Home = () => {
         </ContainerAbout>
 
         <Modalities>
-          <Title>Vamos começar!</Title>
+          <Title>Bora lá ?!</Title>
           <Options>
             <Option onClick={() => navigate('/calculator-page')}>Iniciar</Option>
           </Options>
