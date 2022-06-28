@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+const columnWidth = '150px';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -70,7 +72,7 @@ const Header = styled.div`
 `;
 
 const TitleHeader = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
@@ -87,7 +89,7 @@ const TitleHeader = styled.div`
 `;
 
 const ValueHeader = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
@@ -129,7 +131,7 @@ const Body = styled.div`
 `;
 
 const Column = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
@@ -182,7 +184,7 @@ const Footer = styled.div`
 `;
 
 const NameFooter = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
@@ -199,7 +201,7 @@ const NameFooter = styled.div`
 `;
 
 const ValueFooter = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;

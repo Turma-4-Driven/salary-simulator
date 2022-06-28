@@ -43,7 +43,6 @@ const changeCltAndPjTable = ({ clt, pj }) => {
   
   const cltSalaryInfo = calculateCltSalaryInfo(cltFormattedData);
   const pjSalaryInfo = calculatePjSalaryInfo(pjFormattedData);
-  console.log({ cltSalaryInfo, pjSalaryInfo });
 
   changeTableInfo(cltSalaryInfo, 'clt');
   changeTableInfo(pjSalaryInfo, 'pj');

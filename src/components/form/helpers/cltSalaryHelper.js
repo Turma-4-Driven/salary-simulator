@@ -51,12 +51,13 @@ const calculateCltMonthlySalary = ({
   vacationInss,
   vacationIr,
   totalBenefits,
+  accountingValue,
 }) => {
   const salaryWithBenefits = salary + totalBenefits;
   const vacationWithFgts = vacationSalary + calculateCltFgts(vacationSalary);
 
   const monthlySalary = salaryWithBenefits * (13 / 12) + (vacationWithFgts / 12);  // salário, décimo terceiro e férias; não considero que as férias terão benefícios (VA/VR, ...)
-  const monthlyDiscounts = (inss + ir) * (13 / 12) + ((vacationInss + vacationIr) / 12);
+  const monthlyDiscounts = (inss + ir) * (13 / 12) + ((vacationInss + vacationIr) / 12) + accountingValue;
   const monthlyNetSalary = monthlySalary - monthlyDiscounts;
 
   return {
@@ -73,6 +74,7 @@ const calculateCltSalaryInfo = ({
   otherBenefits=0,
   dependentsQuant=0,
   otherDeductions=0,
+  accountingValue=0,
 }) => {
   const totalDeductions = calculateTotalDeductions({
     dependentsQuant,
@@ -104,6 +106,7 @@ const calculateCltSalaryInfo = ({
     vacationInss,
     vacationIr,
     totalBenefits,
+    accountingValue,
   });
 
   const { annualSalary, annualNetSalary } = calculateAnualSalary({

@@ -31,6 +31,11 @@ const TYPES_SALARY = [
         name: 'Outras Deduções',
         value: 0,
       },
+      {
+        id: 'accountingValue',
+        name: 'Contabilidade',
+        value: 0,
+      },
     ]
   },
   {
