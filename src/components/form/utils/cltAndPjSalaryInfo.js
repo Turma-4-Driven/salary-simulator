@@ -69,8 +69,6 @@ const CNPJ_OPEN_COSTS = [
 ];
 const TOTAL_CNPJ_OPEN_COST = CNPJ_OPEN_COSTS.reduce((acc, cur) => acc + cur.value, 0);
 const MONTHLY_CNPJ_OPEN_COST = currencyRound(TOTAL_CNPJ_OPEN_COST / 12);
-// Estipulação do custo mensal com contabilidade de um CNPJ
-const CNPJ_MONTHLY_COST_DEFAULT = 250;
 
 export {
   CLT_IR_TAXES,
@@ -82,5 +80,4 @@ export {
   PRO_LABOR_MULTIPLIER,
   PJ_INSS_TAX_MULTIPLIER,
   MONTHLY_CNPJ_OPEN_COST,
-  CNPJ_MONTHLY_COST_DEFAULT,
 };
