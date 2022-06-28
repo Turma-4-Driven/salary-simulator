@@ -4,13 +4,23 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
     font-family: 'Roboto', sans-serif;
     font-style: normal;
   }
 
-body {
-    background-color: #121212;
-}
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  }
+
+  body {
+    background-color: #202020;
+  }
 
   html {
     font-family: 'Roboto', sans-serif;
@@ -38,11 +48,11 @@ body {
     //pointer-events: ${p => p.isDisable ? 'wait' : 'all'};
 
     ::placeholder {
-        color: white;
+      color: white;
     }
     :focus {
-        color: white;
-        outline: none;
+      color: white;
+      outline: none;
     }
   }
 

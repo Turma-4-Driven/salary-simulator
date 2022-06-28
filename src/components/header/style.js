@@ -15,7 +15,6 @@ const HeaderPage = styled.div`
 `;
 
 const Title = styled.h1`
-  //color: white;
   color: #ff4791;
 
   font-weight: 700;
@@ -25,6 +24,10 @@ const Title = styled.h1`
   text-align: center;
 
   text-shadow: 0.1em 0.1em 0.2em rgba(245, 40, 145, 0.8);
+
+  :hover {
+    cursor: pointer;
+  }
 
   @media (max-width: 840px) {
     font-size: 45px;

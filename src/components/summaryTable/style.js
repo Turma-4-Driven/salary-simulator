@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
+const columnWidth = '150px';
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 `;
 
-const TitleCLT = styled.h1`
+const TableTitle = styled.h1`
   color: white;
 
   font-weight: 700;
@@ -16,21 +18,7 @@ const TitleCLT = styled.h1`
   margin: 40px 40px;
 
   @media (max-width: 840px) {
-    margin: 40px 40px 20px 40px;
-  }
-`;
-
-const TitlePJ = styled.h1`
-  color: white;
-
-  font-weight: 700;
-  font-size: 25px;
-  letter-spacing: 3px;
-
-  margin: 40px 40px;
-
-  @media (max-width: 840px) {
-    margin: 20px 40px;
+    margin: ${p => p.isClt ? '40px 40px 20px 40px' : '20px 40px'};
   }
 `;
 
@@ -57,7 +45,7 @@ const Header = styled.div`
 
   margin-bottom: 20px;
 
-  span{
+  span {
     color: white;
     align-items: flex-start;
 
@@ -70,12 +58,12 @@ const Header = styled.div`
 `;
 
 const TitleHeader = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -87,12 +75,12 @@ const TitleHeader = styled.div`
 `;
 
 const ValueHeader = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -117,7 +105,7 @@ const Body = styled.div`
 
   word-break: break-word;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -129,12 +117,12 @@ const Body = styled.div`
 `;
 
 const Column = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -145,7 +133,7 @@ const Column = styled.div`
     margin: 0 0 10px 5px;
   }
 
-  strong{
+  strong {
     color: white;
 
     font-weight: 500;
@@ -156,7 +144,7 @@ const Column = styled.div`
   }
 
   @media (max-width: 840px) {
-    span{
+    span {
       margin-left: 20px;
     }
   } 
@@ -170,7 +158,7 @@ const Footer = styled.div`
 
   border-top: 1px solid #ff4791;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -182,12 +170,12 @@ const Footer = styled.div`
 `;
 
 const NameFooter = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
 
-  strong{
+  strong {
     color: white;
 
     font-weight: 500;
@@ -199,12 +187,12 @@ const NameFooter = styled.div`
 `;
 
 const ValueFooter = styled.div`
-  width: 100px;
+  width: ${columnWidth};
 
   display: flex;
   flex-direction: column;
 
-  span{
+  span {
     color: white;
 
     font-weight: 500;
@@ -216,7 +204,7 @@ const ValueFooter = styled.div`
   }
 
   @media (max-width: 840px) {
-    span{
+    span {
       margin-left: 20px;
     }
   } 
@@ -225,8 +213,7 @@ const ValueFooter = styled.div`
 export {
   Container,
   ContainerTable,
-  TitleCLT,
-  TitlePJ,
+  TableTitle,
   TitleHeader,
   Header,
   ValueHeader,
