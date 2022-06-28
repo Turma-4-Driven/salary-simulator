@@ -1,22 +1,20 @@
 import PageContainer from '../../components/pageContainer';
 
-import TableCLT from '../../components/tables/tableCLT';
-import TablePJ from '../../components/tables/tablePJ';
-
 import { Container, ContainerTables } from './style';
 
 import NewSimulation from '../../components/newSimulation';
 import Header from '../../components/header';
+import SummaryTable from '../../components/summaryTable';
 
 const SummaryPage = () => {
-  return(
+  return (
     <>
       <Header />
       <PageContainer>
         <Container>
           <ContainerTables>
-            <TableCLT/>
-            <TablePJ />
+            <SummaryTable type='clt' />
+            <SummaryTable type='pj' />
           </ContainerTables>
           <NewSimulation />
         </Container>

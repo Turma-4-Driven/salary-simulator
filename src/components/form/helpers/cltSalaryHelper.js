@@ -16,12 +16,17 @@ const calculateDependentsDeduction = (dependentsQuantity) => {
   return currencyRound(dependentsQuantity * DEPENDENT_DEDUCTION);
 };
 
-const calculateCltInssAndIr = ({ salary, dependentsQuant, otherDeductions }) => {
-  const inss = calculateRangeTableDiscount(salary, CLT_INSS_TAXES);
-  const DEPENDENT_DEDUCTION = calculateDependentsDeduction(dependentsQuant);
-  const totalDeductions = inss + DEPENDENT_DEDUCTION + otherDeductions;
+const calculateTotalDeductions = ({ dependentsQuant, otherDeductions }) => {
+  const dependentDeduction = calculateDependentsDeduction(dependentsQuant);
 
-  const baseSalaryForIr = salary - totalDeductions;
+  return currencyRound(dependentDeduction + otherDeductions);
+};
+
+const calculateCltInssAndIr = ({ salary, totalDeductions }) => {
+  const inss = calculateRangeTableDiscount(salary, CLT_INSS_TAXES);
+  const deductions = inss + totalDeductions;
+
+  const baseSalaryForIr = salary - deductions;
   const ir = calculateRangeTableDiscount(baseSalaryForIr, CLT_IR_TAXES);
 
   return {
@@ -69,11 +74,12 @@ const calculateCltSalaryInfo = ({
   dependentsQuant=0,
   otherDeductions=0,
 }) => {
-  const { inss, ir } = calculateCltInssAndIr({
-    salary,
+  const totalDeductions = calculateTotalDeductions({
     dependentsQuant,
-    otherDeductions,
+    otherDeductions
   });
+  
+  const { inss, ir } = calculateCltInssAndIr({ salary, totalDeductions });
 
   const fgts = calculateCltFgts(salary);
 
@@ -112,6 +118,8 @@ const calculateCltSalaryInfo = ({
     foodVoucher,
     healthPlan,
     otherBenefits,
+    totalBenefits,
+    totalDeductions,
     salary13: salary,
     fgts,
     vacationSalary,

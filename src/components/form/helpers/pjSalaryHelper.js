@@ -21,6 +21,14 @@ const calculatePjInss = (proLabor) => {
   return currencyRound(proLabor * PJ_INSS_TAX_MULTIPLIER);
 };
 
+const calculateCnpjMonthlyCost = (accountingValue) => {
+  const monthlyAccountingValue = Boolean(typeof accountingValue === 'number')
+    ? accountingValue
+    : CNPJ_MONTHLY_COST_DEFAULT;
+
+  return currencyRound(MONTHLY_CNPJ_OPEN_COST + monthlyAccountingValue);
+};
+
 const calculatePjMonthlySalary = ({
   salary,
   ir,
@@ -28,15 +36,14 @@ const calculatePjMonthlySalary = ({
   salary13,
   vacationSalary,
   totalBenefits,
-  accountingValue,
+  cnpjMonthlyCost,
 }) => {
   // Considerei que tanto o 13º quanto as férias são valores dados a parte, não precisando ser os comuns calculados no CLT
   const monthlySalary13 = salary13 / 12 || 0;
   const monthlyVacationSalary = vacationSalary / 12 || 0;
-  const monthlyAccountingValue = accountingValue || CNPJ_MONTHLY_COST_DEFAULT;
 
   const monthlySalary = salary + monthlySalary13 + monthlyVacationSalary + totalBenefits;
-  const monthlyDiscounts = ir + inss + MONTHLY_CNPJ_OPEN_COST + monthlyAccountingValue;
+  const monthlyDiscounts = ir + inss + cnpjMonthlyCost;
   const monthlyNetSalary = monthlySalary - monthlyDiscounts;
 
   return {
@@ -53,7 +60,7 @@ const calculatePjSalaryInfo = ({
   otherBenefits=0,
   salary13=0,
   vacationSalary=0,
-  accountingValue=0,
+  accountingValue,
 }) => {
   const ir = calculatePjIr(salary);
 
@@ -62,6 +69,8 @@ const calculatePjSalaryInfo = ({
   const inss = calculatePjInss(proLabor);
 
   const totalBenefits = foodVoucher + healthPlan + otherBenefits;
+
+  const cnpjMonthlyCost = calculateCnpjMonthlyCost(accountingValue);
 
   const {
     monthlySalary,
@@ -74,7 +83,7 @@ const calculatePjSalaryInfo = ({
     salary13,
     vacationSalary,
     totalBenefits,
-    accountingValue,
+    cnpjMonthlyCost,
   });
 
   const { annualSalary, annualNetSalary } = calculateAnualSalary({
@@ -86,11 +95,14 @@ const calculatePjSalaryInfo = ({
     salary,
     inss,
     ir,
+    proLabor,
     foodVoucher,
     healthPlan,
     otherBenefits,
-    salary13: salary13 || 0,
-    vacationSalary: vacationSalary || 0,
+    totalBenefits,
+    cnpjMonthlyCost,
+    salary13,
+    vacationSalary,
     monthlySalary,
     monthlyDiscounts,
     monthlyNetSalary,
