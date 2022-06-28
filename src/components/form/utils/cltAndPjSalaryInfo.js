@@ -66,10 +66,6 @@ const CNPJ_OPEN_COSTS = [
     name: 'Certificados Digitais',
     value: 235.00,
   },
-  {
-    name: 'Valor Total',
-    value: 1835.00,
-  },
 ];
 const TOTAL_CNPJ_OPEN_COST = CNPJ_OPEN_COSTS.reduce((acc, cur) => acc + cur.value, 0);
 const MONTHLY_CNPJ_OPEN_COST = currencyRound(TOTAL_CNPJ_OPEN_COST / 12);
