@@ -4,9 +4,7 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 import { TYPES_SALARY } from './utils/salaryInputsInfo';
 import { toBrazilianCurrency } from '../../helpers/currencyHelper';
-import { calculateCltSalaryInfo } from './helpers/cltSalaryHelper';
-import { calculatePjSalaryInfo } from './helpers/pjSalaryHelper';
-import { formatCurrencyInputs } from './helpers/commonSalaryHelper';
+import { changeCltAndPjTable } from './helpers/tableInfoChangeHelper';
 
 import {
   Calculate,
@@ -60,24 +58,8 @@ const Form = () => {
 
     return placeholder;
   };
-  
-  
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('ue');
-
-    console.log({
-      clt: calculateCltSalaryInfo(formatCurrencyInputs(formData.clt))
-    });
-    console.log({
-      pj: calculatePjSalaryInfo(formatCurrencyInputs(formData.pj))
-    });
-
-    goToSummaryPage();
-  };
 
   const handleChange = (e) => {
-    console.log({ formData });
     const inputName = e.target.name;
     const isCltProps = inputName.includes('CLT');
 
@@ -94,6 +76,17 @@ const Form = () => {
         [propName]: e.target.value
       }
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    changeCltAndPjTable({
+      clt: formData.clt,
+      pj: formData.pj,
+    });
+
+    goToSummaryPage();
   };
 
   return (
