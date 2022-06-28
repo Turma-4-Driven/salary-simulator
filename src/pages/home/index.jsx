@@ -30,7 +30,7 @@ const Home = () => {
         <Modalities>
           <Title>Bora lá?!</Title>
           <Options>
-            <Option onClick={() => navigate('/calculator-page')}>Iniciar</Option>
+            <Option onClick={() => navigate('/simulator')}>Iniciar</Option>
           </Options>
         </Modalities>
       </Container>

@@ -19,7 +19,7 @@ const TABLE_INFOS_CLT = [
         value: 2000,
       },
       {
-        name: '13 salário',
+        name: '13º salário',
         value: 2000,
       },
       {
@@ -35,7 +35,7 @@ const TABLE_INFOS_CLT = [
         value: 2000,
       },
     ],
-    total: 2000,
+    netSalary: 2000,
     monthlyProjection:[
       {
         name: 'Salário Bruto',
@@ -88,7 +88,7 @@ const TABLE_INFOS_PJ = [
         value: 2000,
       },
       {
-        name: '13 salário',
+        name: '13º salário',
         value: 2000,
       },
       {
@@ -104,8 +104,8 @@ const TABLE_INFOS_PJ = [
         value: 2000,
       },
     ],
-    total: 2000,
-    monthlyProjection:[
+    netSalary: 2000,
+    monthlyProjection: [
       {
         name: 'Salário Bruto',
         value: 2000,
@@ -138,5 +138,5 @@ const TABLE_INFOS_PJ = [
 
 export {
   TABLE_INFOS_CLT,
-  TABLE_INFOS_PJ
+  TABLE_INFOS_PJ,
 };

@@ -10,7 +10,7 @@ import {
   DEPENDENT_DEDUCTION,
   FGTS_MULTIPLIER,
   VACATION_SALARY_MULTIPLIER,
-} from '../utils/CltAndPjSalaryInfo';
+} from '../utils/cltAndPjSalaryInfo';
 
 const calculateDependentsDeduction = (dependentsQuantity) => {
   return currencyRound(dependentsQuantity * DEPENDENT_DEDUCTION);
@@ -62,12 +62,12 @@ const calculateCltMonthlySalary = ({
 };
 
 const calculateCltSalaryInfo = ({
-  salary,
-  foodVoucher,
-  healthPlan,
-  otherBenefits,
-  dependentsQuant,
-  otherDeductions,
+  salary=0,
+  foodVoucher=0,
+  healthPlan=0,
+  otherBenefits=0,
+  dependentsQuant=0,
+  otherDeductions=0,
 }) => {
   const { inss, ir } = calculateCltInssAndIr({
     salary,

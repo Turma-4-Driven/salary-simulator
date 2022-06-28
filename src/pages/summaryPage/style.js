@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 
-  background-color: #121212;
+  background-color: #202020;
   box-shadow: 0 3px 15px rgba(245, 40, 145, 0.8);
 
   overflow: auto;
@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   @media (max-width: 840px) {
-   width: 80%;
+    width: 80%;
     height: 100%; 
 
     flex-direction: column;

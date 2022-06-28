@@ -4,6 +4,9 @@ import createNumberMask from 'text-mask-addons/dist/createNumberMask';
 
 import { TYPES_SALARY } from './utils/salaryInputsInfo';
 import { toBrazilianCurrency } from '../../helpers/currencyHelper';
+import { calculateCltSalaryInfo } from './helpers/cltSalaryHelper';
+import { calculatePjSalaryInfo } from './helpers/pjSalaryHelper';
+import { formatCurrencyInputs } from './helpers/commonSalaryHelper';
 
 import {
   Calculate,
@@ -19,8 +22,13 @@ import {
 const Form = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({});
+
+  const goToSummaryPage = () => {
+    navigate('/summary');
+    setFormData({});
+  };
   
-  const defaultMaskOptions = {
+  const currencyMaskOptions = {
     prefix: 'R$ ',
     suffix: '',
     includeThousandsSeparator: true,
@@ -32,33 +40,64 @@ const Form = () => {
     allowNegative: false,
     allowLeadingZeroes: false,
   };
+  const quantityMaskOptions = {
+    prefix: '',
+    integerLimit: 3,
+  };
 
-  const currencyMask = createNumberMask({
-    ...defaultMaskOptions,
-  });
+  const makeMask = (type='') => {
+    const mask = Boolean(type.includes('dependentsQuant'))
+      ? quantityMaskOptions
+      : currencyMaskOptions;
 
-  const calculate = (e) => {
+    return createNumberMask({ ...mask });
+  };
+
+  const makePlaceholder = (value, type='') => {
+    const placeholder = Boolean(type.includes('dependentsQuant'))
+      ? value
+      : toBrazilianCurrency(value);
+
+    return placeholder;
+  };
+  
+  
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('ue');
 
-    navigate('/summary-page');
+    console.log({
+      clt: calculateCltSalaryInfo(formatCurrencyInputs(formData.clt))
+    });
+    console.log({
+      pj: calculatePjSalaryInfo(formatCurrencyInputs(formData.pj))
+    });
+
+    goToSummaryPage();
   };
 
   const handleChange = (e) => {
-    // console.log({ [e.target.name]: e.target.value });
+    console.log({ formData });
+    const inputName = e.target.name;
+    const isCltProps = inputName.includes('CLT');
+
+    const propName = isCltProps
+      ? inputName.replace('CLT-', '')
+      : inputName.replace('PJ-', '');
+    
+    const cltOrPjProp = isCltProps ? 'clt' : 'pj';
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [cltOrPjProp]: {
+        ...formData[cltOrPjProp],
+        [propName]: e.target.value
+      }
     });
-    console.log({ newFormData:
-      {
-        ...formData,
-        [e.target.name]: e.target.value
-      } });
   };
 
   return (
-    <FormInfos onSubmit={calculate}>
+    <FormInfos onSubmit={handleSubmit}>
       <ContainerInfos>
         {
           TYPES_SALARY.map((typeSalary, index) => (
@@ -67,10 +106,10 @@ const Form = () => {
 
               <Title>{typeSalary.title}:</Title>
               <InputForm key={index}
-                name={`${typeSalary.modality}-${typeSalary.title}`}
-                placeholder={toBrazilianCurrency(typeSalary.placeholder)}
+                name={`${typeSalary.modality}-${typeSalary.id}`}
+                placeholder={makePlaceholder(typeSalary.placeholder)}
                 onChange={handleChange}
-                mask={currencyMask}
+                mask={makeMask()}
                 required
               />
 
@@ -81,9 +120,9 @@ const Form = () => {
                     <Name>{benefits.name}:</Name>
                     <InputForm key={index}
                       name={`${typeSalary.modality}-${benefits.id}`}
-                      placeholder={toBrazilianCurrency(benefits.value)}
+                      placeholder={makePlaceholder(benefits.value, benefits.id)}
                       onChange={handleChange}
-                      mask={currencyMask}
+                      mask={makeMask(benefits.id)}
                     />
                   </>
                 ))

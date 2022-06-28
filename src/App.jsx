@@ -4,7 +4,7 @@ import ResetStyleCSS from './styles/ResetStyleCSS';
 import GlobalStyle from './styles/GlobalStyle';
 
 import Home from './pages/home';
-import CalculatorPage from './pages/CalculatorPage';
+import SimulatorPage from './pages/simulatorPage';
 import SummaryPage from './pages/summaryPage';
 
 const App = () => {
@@ -16,8 +16,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/calculator-page' element={<CalculatorPage />} />
-          <Route path='/summary-page' element={<SummaryPage />} />
+          <Route path='/simulator' element={<SimulatorPage />} />
+          <Route path='/summary' element={<SummaryPage />} />
         </Routes>
       </BrowserRouter>
     </>

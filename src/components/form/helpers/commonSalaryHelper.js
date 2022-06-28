@@ -1,4 +1,7 @@
-import { currencyRound } from '../../../helpers/currencyHelper';
+import {
+  currencyRound,
+  fromCurrencyToNumber
+} from '../../../helpers/currencyHelper';
 
 /**
  * Função que calcula um desconto através de uma tabela de faixas com taxas progressivas
@@ -53,7 +56,17 @@ const calculateAnualSalary = ({ monthlySalary, monthlyNetSalary }) => {
   };
 };
 
+const formatCurrencyInputs = (currencyObj) => {
+  const newObj = { ...currencyObj };
+  for (const [key, value] of Object.entries(newObj)) {
+    newObj[key] = fromCurrencyToNumber(value);
+  }
+
+  return newObj;
+};
+
 export {
   calculateRangeTableDiscount,
   calculateAnualSalary,
+  formatCurrencyInputs,
 };

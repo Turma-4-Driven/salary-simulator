@@ -22,7 +22,7 @@ const TableCLT = () => {
   return (
     <Container>
       {
-        TABLE_INFOS_CLT.map((tableInfosCLT)=> (
+        TABLE_INFOS_CLT.map((tableInfosCLT) => (
           <>
             <TitleCLT>{`${tableInfosCLT.type}:`}</TitleCLT>
             <ContainerTable>
@@ -52,7 +52,7 @@ const TableCLT = () => {
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{toBrazilianCurrency(tableInfosCLT.total)}</span>
+                  <span>{toBrazilianCurrency(tableInfosCLT.netSalary)}</span>
                 </ValueFooter>
               </Footer>
 

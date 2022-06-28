@@ -4,7 +4,7 @@ import Header from '../../components/header';
 
 import { Container } from './style';
 
-const CalculatorPage = () => {
+const SimulatorPage = () => {
 
   return(
     <>
@@ -18,4 +18,4 @@ const CalculatorPage = () => {
   );
 };
 
-export default CalculatorPage;
+export default SimulatorPage;

@@ -7,7 +7,7 @@ import {
   MONTHLY_CNPJ_OPEN_COST,
   PJ_INSS_TAX_MULTIPLIER,
   PRO_LABOR_MULTIPLIER,
-} from '../utils/CltAndPjSalaryInfo';
+} from '../utils/cltAndPjSalaryInfo';
 
 const calculatePjIr = (salary) => {
   return currencyRound(salary * FEDERAL_TAX_MULTIPLIER);
@@ -47,13 +47,13 @@ const calculatePjMonthlySalary = ({
 };
 
 const calculatePjSalaryInfo = ({
-  salary,
-  foodVoucher,
-  healthPlan,
-  otherBenefits,
-  salary13,
-  vacationSalary,
-  accountingValue,
+  salary=0,
+  foodVoucher=0,
+  healthPlan=0,
+  otherBenefits=0,
+  salary13=0,
+  vacationSalary=0,
+  accountingValue=0,
 }) => {
   const ir = calculatePjIr(salary);
 

@@ -22,7 +22,7 @@ const TablePJ = () => {
   return (
     <Container>
       {
-        TABLE_INFOS_PJ.map((tableInfosPJ)=> (
+        TABLE_INFOS_PJ.map((tableInfosPJ) => (
           <>
             <TitlePJ>{`${tableInfosPJ.type}:`}</TitlePJ>
             <ContainerTable>
@@ -52,7 +52,7 @@ const TablePJ = () => {
                 </NameFooter>
 
                 <ValueFooter>
-                  <span>{toBrazilianCurrency(tableInfosPJ.total)}</span>
+                  <span>{toBrazilianCurrency(tableInfosPJ.netSalary)}</span>
                 </ValueFooter>
               </Footer>
 

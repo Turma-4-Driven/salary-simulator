@@ -70,7 +70,7 @@ const InputForm = styled(MaskedInput)`
   width: 250px;
   height: 35px;
 
-  background-color: #121212;
+  background-color: #202020;
   color: white;
 
   border-radius: 3px;

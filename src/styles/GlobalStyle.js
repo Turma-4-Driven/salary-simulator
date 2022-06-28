@@ -8,9 +8,9 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
   }
 
-body {
-  background-color: #121212;
-}
+  body {
+    background-color: #202020;
+  }
 
   html {
     font-family: 'Roboto', sans-serif;
