@@ -2,7 +2,6 @@ import { currencyRound } from '../../../helpers/currencyHelper';
 import { calculateAnualSalary } from './commonSalaryHelper';
 
 import {
-  CNPJ_MONTHLY_COST_DEFAULT,
   FEDERAL_TAX_MULTIPLIER,
   MONTHLY_CNPJ_OPEN_COST,
   PJ_INSS_TAX_MULTIPLIER,
@@ -22,11 +21,7 @@ const calculatePjInss = (proLabor) => {
 };
 
 const calculateCnpjMonthlyCost = (accountingValue) => {
-  const monthlyAccountingValue = Boolean(typeof accountingValue === 'number')
-    ? accountingValue
-    : CNPJ_MONTHLY_COST_DEFAULT;
-
-  return currencyRound(MONTHLY_CNPJ_OPEN_COST + monthlyAccountingValue);
+  return currencyRound(MONTHLY_CNPJ_OPEN_COST + accountingValue);
 };
 
 const calculatePjMonthlySalary = ({
@@ -60,7 +55,7 @@ const calculatePjSalaryInfo = ({
   otherBenefits=0,
   salary13=0,
   vacationSalary=0,
-  accountingValue,
+  accountingValue=0,
 }) => {
   const ir = calculatePjIr(salary);
 
