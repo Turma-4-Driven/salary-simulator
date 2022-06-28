@@ -20,7 +20,7 @@ const Home = () => {
     <PageContainer>
       <Container>
         <ContainerAbout>
-          <Salutation>Bem-Vindo à Salary Simulador</Salutation>
+          <Salutation>Bem-Vindes à Salary Simulador</Salutation>
           <Description>
             Ajudamos escolher qual o melhor <br/>
             salário para você!
