@@ -11,20 +11,19 @@ import {
   Footer, 
   Header, 
   NameFooter, 
-  TitlePJ, 
+  TableTitle, 
   TitleHeader, 
   ValueFooter, 
   ValueHeader 
 } from './style';
 
 const SummaryTable = ({ type }) => {
-  const tableInfos = Boolean(type === 'clt')
-    ? TABLE_INFOS_CLT
-    : TABLE_INFOS_PJ;
+  const isCltTable = Boolean(type === 'clt');
+  const tableInfos = isCltTable ? TABLE_INFOS_CLT : TABLE_INFOS_PJ;
 
   return (
     <Container>
-      <TitlePJ>{`${tableInfos.type}:`}</TitlePJ>
+      <TableTitle isClt={isCltTable}>{`${tableInfos.type}:`}</TableTitle>
       <ContainerTable>
         <Header>
           <TitleHeader>

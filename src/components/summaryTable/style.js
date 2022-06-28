@@ -8,7 +8,7 @@ const Container = styled.div`
   align-items: flex-start;
 `;
 
-const TitleCLT = styled.h1`
+const TableTitle = styled.h1`
   color: white;
 
   font-weight: 700;
@@ -18,21 +18,7 @@ const TitleCLT = styled.h1`
   margin: 40px 40px;
 
   @media (max-width: 840px) {
-    margin: 40px 40px 20px 40px;
-  }
-`;
-
-const TitlePJ = styled.h1`
-  color: white;
-
-  font-weight: 700;
-  font-size: 25px;
-  letter-spacing: 3px;
-
-  margin: 40px 40px;
-
-  @media (max-width: 840px) {
-    margin: 20px 40px;
+    margin: ${p => p.isClt ? '40px 40px 20px 40px' : '20px 40px'};
   }
 `;
 
@@ -227,8 +213,7 @@ const ValueFooter = styled.div`
 export {
   Container,
   ContainerTable,
-  TitleCLT,
-  TitlePJ,
+  TableTitle,
   TitleHeader,
   Header,
   ValueHeader,
