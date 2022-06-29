@@ -1,6 +1,6 @@
 # 💰 Salary Simulator
 ## 🚀 Descrição do Projeto
-Você está recebendo uma chuva de propostas, só que um problema aparece: CLT ou PJ?! Fique calmo que Salary Simulator facilitará sua vida! Com ele você pode comparar salários de CLT e PJ para ajudar entender melhor qual é a proposta que você considera mas satisfatória para ti!
+Você está recebendo uma chuva de propostas, só que um problema aparece: CLT ou PJ?! Fique calmo que Salary Simulator facilitará sua vida! Com ele você pode comparar salários de CLT e PJ para ajudar entender melhor qual é a proposta que você considera mais satisfatória para ti!
 
 <p align="center">
 	<img alt='Salary Simulator usage GIF' src="/public/assets/salary-simulator-usage.gif" />
@@ -12,7 +12,7 @@ Corra para checar o site agora mesmo: https://salary-simulator-tvc.vercel.app/
 
 
 ## 🔍 Sobre
-No Salary Simulator você pode adicionar seu salário bruto, benefícios (vale alimentação/refeição, plano de saúde e outros) e despesas (como com contabilidade) de suas propostas CLT e PJ. Depois disso, verá a projeção de seu salário líquido, bruto, mensal e anual, contando com benefícios e estimações de valores para inss, ir, fgts e férias que terá em cada caso! Nesse site, podemos encontrar, em qualquer dispositivo que você usar, as seguintes funcionalidades:
+No Salary Simulator você pode adicionar seu salário bruto, benefícios (vale alimentação/refeição, plano de saúde e outros) e despesas (como com contabilidade) de suas propostas CLT e PJ. Depois disso, verá a projeção de seu salário líquido, bruto, mensal e anual, contando com benefícios e estimações de valores para o inss, ir, fgts e férias que terá em cada caso! Nesse site, podemos encontrar, em qualquer dispositivo que você usar, as seguintes funcionalidades:
 
 ### Features
 - [x] Adicionar informações sobre seu salário bruto de CLT e PJ
