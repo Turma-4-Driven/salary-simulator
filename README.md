@@ -6,7 +6,7 @@ Você está recebendo uma chuva de propostas, só que um problema aparece: CLT o
 	<img alt='Salary Simulator usage GIF' src="/public/assets/salary-simulator-usage.gif" />
 </p>
 
-Corra para checar o site agora mesmo: https://salary-simulator-tvc.vercel.app/
+Corra para checar o site agora mesmo: https://salary-simulator-tb.vercel.app/
 
 <br/>
 
