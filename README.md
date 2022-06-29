@@ -1,6 +1,6 @@
 # 💰 Salary Simulator
 ## 🚀 Descrição do Projeto
-Você está recebendo uma chuva de propostas, só que um problema aparece: CLT ou PJ?! Fique calmo que Salary Simulator facilitará sua vida! Com ele você pode comparar salários de CLT e PJ para ajudar entender melhor qual é a proposta que você considera mais satisfatória para ti!
+Você está recebendo uma chuva de propostas, só que um problema aparece: CLT ou PJ?! Fique calmo que Salary Simulator facilitará sua vida! Com ele você pode comparar salários de CLT e PJ para ajudar a entender melhor qual é a proposta que você considera mais satisfatória para ti!
 
 <p align="center">
 	<img alt='Salary Simulator usage GIF' src="/public/assets/salary-simulator-usage.gif" />
@@ -57,7 +57,7 @@ No Salary Simulator você pode adicionar seu salário bruto, benefícios (vale a
 
 ## ⚙️ Como usar
 
-Para utilizar essa API, será necessário ter nas suas máquina as seguintes ferramentas:
+Para utilizar essa API, será necessário ter na sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com) e [Node.js](https://nodejs.org/en/).
 Além disso recomendo fortemente a utilização de um bom ter um editor de código, como o [VSCode](https://code.visualstudio.com/)!
 
@@ -81,7 +81,7 @@ npm install
 # Execute a aplicação
 npm start
 
-# O servidor inciará na porta:3000 (escolhida por padrão) - acesse http://localhost:3000 
+# O servidor iniciará na porta:3000 (escolhida por padrão) - acesse http://localhost:3000 
 
 ```
 
